@@ -1,39 +1,27 @@
 # MySurveillance
-Surveillance software, for the use of cameras.
-At the moment only tested with IPCamera's.
 
-Support for MJPEG and adding support for RTSP
+MySurveillance is surveillance software designed for use with cameras.<br/>
+Currently it has been tested only with IPCameras.<br/>
+<br/>
+It supports MJPEG and plans are underway to add support for RTSP.<br/>
+The software is programmed in Java and has been tested on Windows 10 and Ubuntu.
 
-Programmed in Java, tested on Windows 10 & Ubuntu
+## Config
 
-=================Config=================
- port: The port where the webServer,
-       should run on.
+- `port`: The port where the web server should run on.
+- `screens`: An array of strings representing cameras. A string can be empty for no camera or can contain the name (case sensitive) of the camera.
 
- screens: A array of strings,
-          A string can be empty for no-camera
-          or have the name(Case sensitive) of the camera.
+## Usage
 
-=================Usage=================
-  1) java -jar MySurveillance.jar
+1. Run the following command to start the program: java -jar MySurveillance.jar
 
-  3) Program will say there's no,
-     config.json and creates one.
-     After the program closes for the,
-     use to configure the config.
-     [See Config]
+2. If no `config.json` is found, the program will create one and exit. You can then configure the `config.json` file as needed. (See the Config section.)
 
-  4) The program starts & can be accessed,
-     over HTTP inside of a browser on the port
-     configured inside of the config.
+3. After configuration, restart the program. It can be accessed via HTTP in a web browser on the port configured in the `config.json`.
 
-  5) Use the stop command the safely stop,
-     the program without losing any settings.
+4. Use the `stop` command to safely stop the program without losing any settings.
 
-=================Commands=================
-  save: Saves config/accounts/cameras
+## Commands
 
-  stop: Saves config/accounts/cameras,
-        toggles a boolean to stop all services
-        after 15sec forcecloses itself incase any
-        while loops are still active.
+- `save`: Saves config/accounts/cameras.
+- `stop`: Saves config/accounts/cameras, toggles a boolean to stop all services. After 15 seconds, the program will force close itself in case any while loops are still active.
