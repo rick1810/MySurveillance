@@ -27,3 +27,7 @@ The software is programmed in Java and has been tested on Windows 10 and Ubuntu.
 - `save`: Saves config/accounts/cameras.
 - `stop`: Saves config/accounts/cameras, toggles a boolean to stop all services. After 15 seconds, the program will force close itself in case any while loops are still active.
 - `gui`: Open a new Gui, and closes any old ones.
+
+## Dependencies
+
+- `json-simple` `1.1.1`: https://github.com/fangyidong/json-simple
