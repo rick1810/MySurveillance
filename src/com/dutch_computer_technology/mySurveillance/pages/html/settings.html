@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<style>default</style>
+		<style>settings</style>
+		<script>default</script>
+		<script>settings</script>
+		<title>MySurveillance</title>
+	</head>
+	<body>
+		<div class="header">
+			<h1>MySurveillance</h1>
+			<div class="pages">
+				<button onmousedown="goTo(event, '')">Home</button>
+				<button onmousedown="goTo(event, 'accounts')">Accounts</button>
+				<button onmousedown="goTo(event, 'cameras')">Cameras</button>
+				<button onmousedown="goTo(event, 'settings')">Settings</button>
+			</div>
+			<div class="options">
+				<button class="logout" id="logoutButton">Logout</button>
+			</div>
+		</div>
+		<br>
+		<div class="setting"><p>Save Path:</p><input id="path" type="text" value="<path>"/></div>
+	</body>
+</html>
