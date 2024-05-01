@@ -6,6 +6,10 @@ Currently it has been tested only with IPCameras.<br/>
 It supports MJPEG and plans are underway to add support for RTSP.<br/>
 The software is programmed in Java and has been tested on Windows 10 and Ubuntu.
 
+## Jar download
+
+You can download any version in [/compiled](/compiled)
+
 ## Config
 
 - `port`: The port where the web server should run on.
