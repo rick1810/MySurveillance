@@ -21,20 +21,24 @@ public class FileManager extends Thread {
 	
 	public void addData(String name, byte[] data) {
 		
-		List<byte[]> buffer = new ArrayList<byte[]>();
-		if (buffers.containsKey(name)) buffer = buffers.get(name);
-		buffer.add(data);
-		buffers.put(name, buffer);
+		synchronized(this) {
+			List<byte[]> buffer = new ArrayList<byte[]>();
+			if (buffers.containsKey(name)) buffer = buffers.get(name);
+			buffer.add(data);
+			buffers.put(name, buffer);
+		}
 		
 	};
 	
 	public int totalBuffers() {
 		
-		int ammo = 0;
-		for (String name : buffers.keySet()) {
-			ammo += buffers.get(name).size();
-		};
-		return ammo;
+		synchronized(this) {
+			int ammo = 0;
+			for (String name : buffers.keySet()) {
+				ammo += buffers.get(name).size();
+			};
+			return ammo;
+		}
 		
 	};
 	
@@ -66,21 +70,25 @@ public class FileManager extends Thread {
 		
 		while (ms.run) {
 			
-			for (String name : buffers.keySet()) {
+			synchronized(this) {
 				
-				List<byte[]> buffer = buffers.get(name);
-				if (buffer.size() == 0) continue;
-				
-				byte[] data = buffer.get(0).clone();
-				buffer.remove(0);
-				
-				write(name, data, true);
+				for (String name : buffers.keySet()) {
+					
+					List<byte[]> buffer = buffers.get(name);
+					if (buffer.size() == 0) continue;
+					
+					byte[] data = buffer.get(0).clone();
+					buffer.remove(0);
+					
+					write(name, data, true);
+					
+				};
 				
 			};
 			
 			try {
 				
-				Thread.sleep(1);
+				Thread.sleep(200);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			};
