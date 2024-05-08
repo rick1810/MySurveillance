@@ -52,6 +52,7 @@ public class ByteManager {
 			buffer[o] = arr[i];
 			o++;
 		};
+		if (o < buffer.length) return between(buffer, 0, o);
 		return buffer;
 		
 	};
@@ -65,14 +66,15 @@ public class ByteManager {
 	public static byte[] between(byte[] arr, int start, int end) {
 		
 		int dif = end - start;
-		if (dif < 1) return new byte[0];
+		if (dif < 1 || start >= arr.length) return new byte[0];
 		
 		byte[] buffer = new byte[dif];
 		int o = 0;
-		for (int i = start; i < end; i++) {
+		for (int i = start; i < end && i < arr.length; i++) {
 			buffer[o] = arr[i];
 			o++;
 		};
+		if (o < buffer.length) return between(buffer, 0, o);
 		return buffer;
 		
 	};
