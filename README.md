@@ -11,7 +11,7 @@ The software is programmed in Java and has been tested on Windows 10 and Ubuntu.
 
 ## Jar download
 
-You can download any version in [/releases](https://github.com/rick1810/MySurveillance/releases)
+You can download any stable or newest version in [/releases](https://github.com/rick1810/MySurveillance/releases)
 
 ## Config
 
