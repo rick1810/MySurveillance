@@ -6,7 +6,7 @@ Currently it has been tested only with IPCameras.<br/>
 It supports MJPEG and plans are underway to add support for RTSP.<br/>
 The software is programmed in Java and has been tested on Windows 10 and Ubuntu.<br/>
 <br/>
-<b>A preview of the Homepage<b/>
+<b>A preview of the Homepage</b>
 ![Home](preview/home_edit.png)
 
 ## Jar download
