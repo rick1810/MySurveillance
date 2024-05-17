@@ -14,7 +14,6 @@ You can download any version in [/releases](https://github.com/rick1810/MySurvei
 
 - `port`: The port where the web server should run on.
 - `screens`: An array of strings representing cameras. A string can be empty for no camera or can contain the name (case sensitive) of the camera.
-- `save`: Location to save camera streams.
 
 ## Usage
 
@@ -33,6 +32,7 @@ You can download any version in [/releases](https://github.com/rick1810/MySurvei
 - `save`: Saves config/accounts/cameras/files.
 - `stop`: Saves config/accounts/cameras/files, toggles a boolean to stop all services. After 15 seconds, the program will force close itself in case any while loops are still active.
 - `gui`: Open a new Gui, and closes any old ones.
+- `radmin` : Resets/Create `Admin` account with default credentials `0000`
 
 ## Dependencies
 
