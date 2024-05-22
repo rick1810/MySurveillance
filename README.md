@@ -3,7 +3,7 @@
 MySurveillance is surveillance software designed for use with cameras.<br/>
 Currently it has been tested only with IPCameras.<br/>
 <br/>
-It supports MJPEG and plans are underway to add support for RTSP.<br/>
+Supports MJPEG.<br/>
 The software is programmed in Java and has been tested on Windows 10 and Ubuntu.<br/>
 <br/>
 <b>A preview of the Homepage</b>
@@ -36,7 +36,3 @@ You can download any stable or newest version in [/releases](https://github.com/
 - `stop`: Saves config/accounts/cameras/files, toggles a boolean to stop all services. After 15 seconds, the program will force close itself in case any while loops are still active.
 - `gui`: Open a new Gui, and closes any old ones.
 - `radmin` : Resets/Create `Admin` account with default credentials `0000`
-
-## Dependencies
-
-- `json-simple` `1.1.1`: https://github.com/fangyidong/json-simple
