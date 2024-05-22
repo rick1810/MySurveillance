@@ -1,0 +1,11 @@
+.msg {
+	width: 100%;
+	height: calc(100% - 90px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.msg h2 {
+	margin: 0px;
+}

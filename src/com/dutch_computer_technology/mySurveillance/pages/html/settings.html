@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<style>default</style>
+		<style>settings</style>
+		<script>default</script>
+		<script>settings</script>
+		<title>MySurveillance</title>
+	</head>
+	<body>
+		<div class="header">
+			<h1>MySurveillance</h1>
+			<div class="pages">
+				<button onmousedown="goTo(event, '')">{{header.home}}</button>
+				<button onmousedown="goTo(event, 'accounts')">{{header.accounts}}</button>
+				<button onmousedown="goTo(event, 'cameras')">{{header.cameras}}</button>
+				<button onmousedown="goTo(event, 'settings')">{{header.settings}}</button>
+			</div>
+			<div class="options">
+				<button class="logout" id="logoutButton">{{header.logout}}</button>
+			</div>
+		</div>
+		<div class="langauge">
+			<h3>{{settings.langauge}}</h3>
+			<div class="lang"><p><languageDisplayName></p><button onclick="openLangauge();"><img src="<language>.png"></button></div>
+		</div>
+		<div class="colors">
+			<h3>{{settings.colors}}</h3>
+			<div class="color"><p>{{settings.color.primary}}:</p><button onclick="openColor('primary');" id="primary" class="preview" style="background-color: <primaryColor>"></button></div>
+			<div class="color"><p>{{settings.color.secondary}}:</p><button onclick="openColor('secondary');" id="secondary" class="preview" style="background-color: <secondaryColor>"></button></div>
+			<div class="color"><p>{{settings.color.tertiary}}:</p><button onclick="openColor('tertiary');" id="tertiary" class="preview" style="background-color: <tertiaryColor>"></button></div>
+			<div class="color"><p>{{settings.color.input}}:</p><button onclick="openColor('input');" id="input" class="preview" style="background-color: <inputColor>"></button></div>
+			<div class="color"><p>{{settings.color.inputBorder}}:</p><button onclick="openColor('inputBorder');" id="inputBorder" class="preview" style="background-color: <inputBorderColor>"></button></div>
+			<div class="color"><p>{{settings.color.banner}}:</p><button onclick="openColor('banner');" id="banner" class="preview" style="background-color: <bannerColor>"></button></div>
+		</div>
+	</body>
+</html>

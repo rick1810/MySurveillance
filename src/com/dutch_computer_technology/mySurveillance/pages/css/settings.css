@@ -1,0 +1,147 @@
+.langauge {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.langauge h3 {
+	width: 50%;
+	margin: 24px 0px 8px 0px;
+}
+.langauge .lang {
+	width: 50%;
+	display: flex;
+	background-color: <secondaryColorLighter>;
+	border: 1px solid <tertiaryColorLighter>;
+	border-radius: 3px;
+	min-width: 200px;
+	height: 27px;
+	justify-content: center;
+}
+.langauge .lang p {
+	margin: 0px;
+	margin-right: 12px;
+	font-size: 22px;
+	color: <tertiaryColor>;
+	width: 60%;
+	min-width: 150px;
+	max-width: 220px;
+}
+.langauge .lang button {
+	margin: 0px;
+	color: <tertiaryColor>;
+	width: 15%;
+	min-width: 40px;
+	padding: 0px;
+	aspect-ratio: 1.6 / 1;
+}
+.langauge .lang button img {
+	margin: 0px;
+	image-rendering: pixelated;
+	height: 100%;
+}
+
+.colors {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.colors h3 {
+	width: 50%;
+	margin: 24px 0px 8px 0px;
+}
+.colors .color {
+	width: 50%;
+	display: flex;
+	background-color: <secondaryColorLighter>;
+	border: 1px solid <tertiaryColorLighter>;
+	border-radius: 3px;
+	min-width: 200px;
+	height: 22px;
+	justify-content: space-between;
+}
+.colors .color + .color {
+	margin-top: 20px;
+}
+.colors .color p {
+	margin: 0px;
+	margin-left: 16px;
+	font-size: 17px;
+	color: <tertiaryColor>;
+	width: 60%;
+	min-width: 150px;
+}
+.colors .color .preview {
+	border: 2px solid #000000;
+	width: 40%;
+}
+
+.sensor {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #0000005e;
+}
+.sensor .menu {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	padding: 4px;
+	background-color: <secondaryColorLighter>;
+	border-radius: 3px;
+	min-width: 320px;
+}
+.sensor .menu div {
+	display: flex;
+}
+.sensor .menu div + div {
+	margin-top: 4px;
+}
+.sensor .menu div p {
+	display: flex;
+	margin: 0px;
+	width: 65%;
+}
+.sensor .menu div input {
+	width: 100%;
+}
+.sensor .menu div select {
+	width: 100%;
+}
+.sensor .menu .buttons {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-top: 6px;
+}
+.sensor .menu .buttons button {
+	margin: 0px 6px;
+}
+.sensor .menu .colorBlock {
+	margin: 20px;
+	width: 100%;
+	height: 30px;
+	border: 2px solid #000000;
+}
+.sensor .menu .languages {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+.sensor .menu .languages button {
+	width: 22%;
+	padding: 0px;
+	aspect-ratio: 1.6 / 1;
+}
+.sensor .menu .languages button img {
+	margin: 1px 0px;
+	image-rendering: pixelated;
+	height: 100%;
+}

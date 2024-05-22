@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<style>default</style>
+		<style>accounts</style>
+		<script>default</script>
+		<script>accounts</script>
+		<title>MySurveillance</title>
+	</head>
+	<body>
+		<div class="header">
+			<h1>MySurveillance</h1>
+			<div class="pages">
+				<button onmousedown="goTo(event, '')">{{header.home}}</button>
+				<button onmousedown="goTo(event, 'accounts')">{{header.accounts}}</button>
+				<button onmousedown="goTo(event, 'cameras')">{{header.cameras}}</button>
+				<button onmousedown="goTo(event, 'settings')">{{header.settings}}</button>
+			</div>
+			<div class="options">
+				<button class="logout" id="logoutButton">{{header.logout}}</button>
+			</div>
+		</div>
+		<br>
+		<div class="accountOptions"><button class="new" onclick="openUser();">+</button></div>
+		<div class="accounts">
+			<accounts>
+		</div>
+		<br>
+		<br>
+	</body>
+</html>

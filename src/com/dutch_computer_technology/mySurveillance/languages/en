@@ -1,0 +1,54 @@
+header.home=Home
+header.accounts=Accounts
+header.cameras=Cameras
+header.settings=Settings
+header.logout=Logout
+
+data.parse=Can't read data
+data.incomplete=Data incomplete
+credentials.incorrect=Incorrect Username/Password
+
+input.reset=Reset
+input.remove=Remove
+input.save=Save
+input.close=Close
+
+login.text=Login to MySurveillance
+login.username=Username
+login.password=Password
+login.login=Login
+
+notFound.title=404 Not found
+notFound.title.text=404, Not found
+unauthorized.title=Unauthorized
+unauthorized.title.text=Unauthorized
+unauthorized.privileges=Admin privileges needed
+
+cameras.layout=Layout
+cameras.noCam=No Video
+cameras.nameUsed=Name already in-use
+cameras.camNotFound=Camera not found
+cameras.screenNotFound=Screen does not exist
+cameras.streamTypeNotFound=StreamType not found
+cameras.streamNotFound=Stream not found
+cameras.pathTypeNotFound=PathType not found
+cameras.pathNotFound=Path not found
+cameras.reasonTypeNotFound=ReasonType not found
+cameras.reasonNotFound=Reason not found
+
+accounts.nameUsed=Username already in use
+accounts.username=Username
+accounts.password=Password
+accounts.isAdmin=isAdmin
+
+settings.langauge=Langauge
+settings.languageNotFound=Language not found
+settings.colors=Colors
+settings.color.primary=Primary Color
+settings.color.secondary=Secondary Color
+settings.color.tertiary=Tertiary Color
+settings.color.input=Input Color
+settings.color.inputBorder=Input Border Color
+settings.color.banner=Banner Color
+settings.colorNotFound=Color not found
+settings.invalidHex=Invalid hex

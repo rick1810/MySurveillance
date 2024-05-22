@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<style>default</style>
+		<style>cameras</style>
+		<script>default</script>
+		<script>cameras</script>
+		<title>MySurveillance</title>
+	</head>
+	<body>
+		<div class="header">
+			<h1>MySurveillance</h1>
+			<div class="pages">
+				<button onmousedown="goTo(event, '')">{{header.home}}</button>
+				<button onmousedown="goTo(event, 'accounts')">{{header.accounts}}</button>
+				<button onmousedown="goTo(event, 'cameras')">{{header.cameras}}</button>
+				<button onmousedown="goTo(event, 'settings')">{{header.settings}}</button>
+			</div>
+			<div class="options">
+				<button class="logout" id="logoutButton">{{header.logout}}</button>
+			</div>
+		</div>
+		<br>
+		<div class="screenOptions">
+			<div class="top"><h2>{{cameras.layout}}</h2><div class="options"><button onclick="screensMin();">-</button><p>No'Screens: <min></p><button onclick="screensPlus();">+</button></div></div>
+			<screens>
+		</div>
+		<br>
+		<br>
+		<cameras>
+	</body>
+</html>

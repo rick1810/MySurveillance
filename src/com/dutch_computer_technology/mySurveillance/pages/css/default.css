@@ -1,0 +1,95 @@
+html {
+	background-color: <primaryColor>;
+}
+body {
+	margin: 0px;
+}
+input {
+	background-color: <inputColor>;
+	border: 2px inset <inputBorderColor>;
+}
+select {
+	background-color: <inputColor>;
+	border: 2px inset <inputBorderColor>;
+}
+button {
+	background-color: <inputColor>;
+	border: 2px outset <inputBorderColor>;
+}
+button:hover {
+	background-color: <inputColorDarker>;
+	border: 2px inset <inputBorderColor>;
+}
+.header {
+	display: flex;
+	height: 90px;
+	background-color: <bannerColor>;
+	border-radius: 0px 0px 11px 11px;
+	padding: 0px 22px;
+}
+.header .pages {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 0px 4%;
+	width: 100%;
+	border-right: 2px solid <primaryColor>;
+	margin-right: 16px;
+}
+.header .pages button {
+	width: 100%;
+	min-width: 80px;
+	max-width: 145px;
+	height: 22px;
+	background-color: <primaryColor>;
+	border: 1px solid <secondaryColorLighter>;
+	border-radius: 3px;
+}
+.header .pages button + button {
+	margin-left: 20px;
+}
+.header .pages button:hover {
+	background-color: <primaryColorDarker>;
+	border-color: <secondaryColor>;
+}
+@media only screen and (max-width: 750px) {
+	.header .pages {
+		flex-direction: column;
+	}
+	.header .pages button + button {
+		margin-left: 0px;
+		margin-top: 1px;
+	}
+}
+.header .options {
+	width: 100%;
+	min-width: 54px;
+	max-width: 85px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.header .logout {
+	width: 100%;
+	height: 22px;
+	background-color: <primaryColor>;
+	border: 1px solid <secondaryColorLighter>;
+	border-radius: 3px;
+}
+.header .logout:hover {
+	background-color: <primaryColorDarker>;
+	border-color: <secondaryColor>;
+}
+p, h1, h2, h3, h4, h5, h6 {
+	color: <tertiaryColor>;
+}
+.inputError {
+	justify-content: center !important;
+}
+.inputError p {
+	display: block !important;
+	margin: 0px !important;
+	width: auto !important;
+	color: #63071c !important;
+	font-size: 14px !important;
+}

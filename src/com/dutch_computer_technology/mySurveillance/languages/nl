@@ -1,0 +1,54 @@
+header.home=Home
+header.accounts=Accounts
+header.cameras=Kameras
+header.settings=Instellingen
+header.logout=Outloggen
+
+data.parse=Can gegevens niet lezen
+data.incomplete=Gegevens niet complete
+credentials.incorrect=Incorrect Gebruikersnaam/Wachtwoord
+
+input.reset=Resetten
+input.remove=Verwijder
+input.save=Opslaan
+input.close=Sluit
+
+login.text=Inloggen bij MySurveillance
+login.username=Gebruikersnaam
+login.password=Wachtwoord
+login.login=Inloggen
+
+notFound.title=404 Not found
+notFound.title.text=404, Not found
+unauthorized.title=Unauthorized
+unauthorized.title.text=Unauthorized
+unauthorized.privileges=Admin privileges needed
+
+cameras.layout=Indeling
+cameras.noCam=No Video
+cameras.nameUsed=Naam wordt all gebruikt
+cameras.camNotFound=Kamera niet gevonden
+cameras.screenNotFound=Scherm niet gevonden
+cameras.streamTypeNotFound=StreamType not found
+cameras.streamNotFound=Stream not found
+cameras.pathTypeNotFound=PathType not found
+cameras.pathNotFound=Path not found
+cameras.reasonTypeNotFound=ReasonType not found
+cameras.reasonNotFound=Reason not found
+
+accounts.nameUsed=Gebruikersnaam wordt all gebruikt
+accounts.username=Gebruikersnaam
+accounts.password=Wachtwoord
+accounts.isAdmin=isAdmin
+
+settings.langauge=Taal
+settings.languageNotFound=Taal niet gevonden
+settings.colors=Kleuren
+settings.color.primary=Primair Kleur
+settings.color.secondary=Secundair Kleur
+settings.color.tertiary=Tertiair Kleur
+settings.color.input=Invoer Kleur
+settings.color.inputBorder=Invoerrand Kleur
+settings.color.banner=Banier Kleur
+settings.colorNotFound=Kleur niet gevonden
+settings.invalidHex=Ongeldig hex
