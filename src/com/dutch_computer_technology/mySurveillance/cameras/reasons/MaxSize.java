@@ -2,6 +2,8 @@ package com.dutch_computer_technology.mySurveillance.cameras.reasons;
 
 import java.io.File;
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -159,6 +161,19 @@ public class MaxSize extends Reason {
 		return "<div><p>Reason:</p><input key=\"size\" type=\"number\" min=\"1\" max=\"1024\" value=\"" + size.toString() + "\"/><p>" + unit.toString().toUpperCase() + "</p><input hidden key=\"unit\" value=\"" + unit.toString() + "\"</div>";
 	};
 	
+	private BigInteger getSize(BigInteger size, File file) {
+		
+		if (file.isDirectory()) {
+			for (File myFile : Arrays.asList(file.listFiles())) {
+				size = getSize(size, myFile);
+			};
+		} else if (file.isFile()) {
+			size = size.add(BigInteger.valueOf(file.length()));
+		};
+		return size;
+		
+	};
+	
 	@Override
 	public boolean test() {
 		
@@ -173,18 +188,31 @@ public class MaxSize extends Reason {
 			
 			List<File> files = path.files();
 			for (File file : files) {
-				if (file.isFile()) size.add(BigInteger.valueOf(file.length()));
+				size = getSize(size, file);
 			};
 			
 			this.bufferedSize = size;
 			
-			return (size.compareTo(maxSize) == 1);
+			return (size.compareTo(this.maxSize) == 1);
 			
 		} catch (Exception e) {
 			Main.print(this, e);
 		};
 		
 		return false;
+		
+	};
+	
+	private List<File> getFiles(List<File> files, File file) {
+		
+		if (file.isDirectory()) {
+			for (File myFile : Arrays.asList(file.listFiles())) {
+				files = getFiles(files, myFile);
+			};
+		} else if (file.isFile()) {
+			files.add(file);
+		};
+		return files;
 		
 	};
 	
@@ -199,14 +227,21 @@ public class MaxSize extends Reason {
 		
 		try {
 			
-			List<File> files = path.files();
+			List<File> files = new ArrayList<File>();
+			for (File file : path.files()) {
+				files = getFiles(files, file);
+			};
+			
 			Collections.sort(files, (a, b) -> Long.compare(a.lastModified(), b.lastModified()));
 			
 			int dels = 0;
 			int i = 0;
-			while (bufferedSize.compareTo(maxSize) == 1 && files.size() > 0 && dels < 1000) { //Don't delete too much in a single loop, everything has to wait for this!
+			while (this.bufferedSize.compareTo(this.maxSize) == 1 && files.size() > 0 && i < files.size() && dels < 1000) { //Don't delete too much in a single loop, everything has to wait for this!
 				File file = files.get(i);
-				if (path.delete(file.getName())) bufferedSize.subtract(BigInteger.valueOf(file.length()));
+				long s = file.length();
+				if (file.delete()) {
+					this.bufferedSize = this.bufferedSize.subtract(BigInteger.valueOf(s));
+				};
 				i++;
 			};
 			
