@@ -38,6 +38,8 @@ public class MySurveillance {
 	
 	public JSONObject config;
 	
+	private MySurveillance ms;
+	
 	public JSONObject getJSON(String name) {
 		
 		if (path == null) return null;
@@ -95,6 +97,8 @@ public class MySurveillance {
 	};
 	
 	public MySurveillance() throws URISyntaxException {
+		
+		this.ms = this;
 		
 		Main.print(this, "MySurveillance");
 		Main.print(this, "Version: " + Main.version);
@@ -165,7 +169,7 @@ public class MySurveillance {
 			fileManager.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 				@Override
 				public void uncaughtException(Thread t, Throwable e) {
-					Main.print(this, "FileManager crashed!", ((e instanceof Exception) ? (Exception)e : null));
+					Main.print(ms, "FileManager crashed!", new Exception(e));
 				};
 			});
 		} catch(Exception e) {
@@ -180,7 +184,7 @@ public class MySurveillance {
 			streamManager.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 				@Override
 				public void uncaughtException(Thread t, Throwable e) {
-					Main.print(this, "StreamManager crashed!", ((e instanceof Exception) ? (Exception)e : null));
+					Main.print(ms, "StreamManager crashed!", new Exception(e));
 				};
 			});
 			streamManager.start();
@@ -207,7 +211,7 @@ public class MySurveillance {
 			website.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 				@Override
 				public void uncaughtException(Thread t, Throwable e) {
-					Main.print(this, "Website crashed!", ((e instanceof Exception) ? (Exception)e : null));
+					Main.print(ms, "Website crashed!", new Exception(e));
 				};
 			});
 			website.start();
@@ -225,7 +229,7 @@ public class MySurveillance {
 			guiManager.setUncaughtExceptionHandler(new UncaughtExceptionHandler() {
 				@Override
 				public void uncaughtException(Thread t, Throwable e) {
-					Main.print(this, "GuiManager crashed!", ((e instanceof Exception) ? (Exception)e : null));
+					Main.print(ms, "GuiManager crashed!", new Exception(e));
 				};
 			});
 			guiManager.start();
