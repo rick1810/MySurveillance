@@ -11,7 +11,7 @@ import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 
 public class Main {
 	
-	public static final String version = "1.4";
+	public static final String version = "1.4.2";
 	public static final int defaultPort = 8090;
 	public static final String defaultSaveLocation = "storage";
 	public static final String defaultUser = "Admin";
