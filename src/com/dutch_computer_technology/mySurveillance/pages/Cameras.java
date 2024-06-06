@@ -95,14 +95,14 @@ public class Cameras implements PageHandler {
 			Page page = new Page();
 			byte[] s = new byte[0];
 			if (cam == null) {
-				s = ByteManager.append(s, "HTTP/1.1 404 Not Found\nServer: MySurveillance");
-				s = ByteManager.append(s, "\nContent-Type: " + ContentType.JPEG.toString());
-				s = ByteManager.append(s, "\nConnection: Close\nCache-Control: no-cache, no-store\n\n");
+				s = ByteManager.append(s, "HTTP/1.1 404 Not Found\r\nServer: MySurveillance");
+				s = ByteManager.append(s, "\r\nContent-Type: " + ContentType.JPEG.toString());
+				s = ByteManager.append(s, "\r\nConnection: Close\r\nCache-Control: no-cache, no-store\r\n\r\n");
 				s = ByteManager.append(s, getDefaultStream(ms));
 			} else {
-				s = ByteManager.append(s, "HTTP/1.1 200 OK\nServer: MySurveillance");
-				s = ByteManager.append(s, "\nContent-Type: " + ContentType.JPEG.toString());
-				s = ByteManager.append(s, "\nConnection: Close\nCache-Control: no-cache, no-store\n\n");
+				s = ByteManager.append(s, "HTTP/1.1 200 OK\r\nServer: MySurveillance");
+				s = ByteManager.append(s, "\r\nContent-Type: " + ContentType.JPEG.toString());
+				s = ByteManager.append(s, "\r\nConnection: Close\r\nCache-Control: no-cache, no-store\r\n\r\n");
 				byte[] stream = cam.getStreamData();
 				if (stream == null || !cam.isRunning()) {
 					s = ByteManager.append(s, getDefaultStream(ms));
@@ -538,7 +538,7 @@ public class Cameras implements PageHandler {
 							pType = PathType.valueOf(type);
 						} catch(IllegalArgumentException ignore) {};
 						if (pType != null) {
-							cam.setPath(ms.fileManager.createPath(pType, path));
+							cam.setPath(ms.fileManager.createPath(pType, cam, path));
 						};
 					};
 				};
