@@ -44,26 +44,26 @@ public class FileManager extends Thread {
 		Absolute
 	};
 	
-	public Path createPath(PathType type) {
+	public Path createPath(PathType type, Camera cam) {
 		if (type == null) return null;
 		switch(type) {
 			case Absolute:
-				return new Absolute(ms);
+				return new Absolute(ms, cam);
 			case Relative:
-				return new Relative(ms);
+				return new Relative(ms, cam);
 			default:
 				break;
 		};
 		return null;
 	};
 	
-	public Path createPath(PathType type, JSONObject json) {
+	public Path createPath(PathType type, Camera cam, JSONObject json) {
 		if (type == null) return null;
 		switch(type) {
 			case Absolute:
-				return new Absolute(ms, json);
+				return new Absolute(ms, cam, json);
 			case Relative:
-				return new Relative(ms, json);
+				return new Relative(ms, cam, json);
 			default:
 				break;
 		};
@@ -102,14 +102,14 @@ public class FileManager extends Thread {
 	};
 	
 	public Path getPath(Camera cam, PathType type) {
-		if (cam == null) return createPath(type);
+		if (cam == null) return createPath(type, cam);
 		Path path = cam.getPath();
 		if (path != null) {
 			if (path.getType().equals(type)) {
 				return path;
 			};
 		};
-		return createPath(type);
+		return createPath(type, cam);
 	};
 	
 	public Reason getReason(Camera cam, ReasonType type) {
