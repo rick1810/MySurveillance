@@ -1,19 +1,20 @@
 package com.dutch_computer_technology.mySurveillance.cameras.paths;
 
 import com.dutch_computer_technology.mySurveillance.Main;
+import com.dutch_computer_technology.mySurveillance.cameras.Camera;
 import com.dutch_computer_technology.mySurveillance.json.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 import com.dutch_computer_technology.mySurveillance.main.FileManager.PathType;
 
 public class Relative extends Path {
 	
-	public Relative(MySurveillance ms) {
-		super(ms, PathType.Relative);
+	public Relative(MySurveillance ms, Camera cam) {
+		super(ms, PathType.Relative, cam);
 		setPath(Main.path(Main.defaultSaveLocation));
 	};
 	
-	public Relative(MySurveillance ms, JSONObject json) {
-		super(ms, PathType.Relative, json);
+	public Relative(MySurveillance ms, Camera cam, JSONObject json) {
+		super(ms, PathType.Relative, cam, json);
 	};
 	
 	@Override

@@ -8,24 +8,28 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.dutch_computer_technology.mySurveillance.Main;
+import com.dutch_computer_technology.mySurveillance.cameras.Camera;
 import com.dutch_computer_technology.mySurveillance.json.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 import com.dutch_computer_technology.mySurveillance.main.FileManager.PathType;
 
 public class Path {
-	
-	private PathType type;
-	private String path;
+
 	private MySurveillance ms;
+	private PathType type;
+	private Camera cam;
+	private String path;
 	
-	public Path(MySurveillance ms, PathType type) {
+	public Path(MySurveillance ms, PathType type, Camera cam) {
 		this.ms = ms;
 		this.type = type;
+		this.cam = cam;
 	};
 	
-	public Path(MySurveillance ms, PathType type, JSONObject json) {
+	public Path(MySurveillance ms, PathType type, Camera cam, JSONObject json) {
 		this.ms = ms;
 		this.type = type;
+		this.cam = cam;
 		this.path = json.getString("path");
 	};
 	
@@ -33,15 +37,22 @@ public class Path {
 		return ms;
 	};
 	
+	public PathType getType() {
+		return type;
+	};
+	
+	public Camera getCam() {
+		return cam;
+	};
+	public void setCam(Camera cam) {
+		this.cam = cam;
+	};
+	
 	public JSONObject toJSON() {
 		JSONObject json = new JSONObject();
 		json.put("type", type.toString());
 		json.put("path", path);
 		return json;
-	};
-	
-	public PathType getType() {
-		return type;
 	};
 	
 	public String getPath() {
@@ -62,7 +73,7 @@ public class Path {
 	
 	public void write(String name, byte[] data, boolean append) { //Write to file at path
 		
-		String fullPath = path + Main.slash() + name;
+		String fullPath = path + Main.slash() + cam.getName() + Main.slash() + name;
 		
 		String[] paths = Main.files(fullPath);
 		if (paths.length > 1) {
@@ -89,7 +100,7 @@ public class Path {
 	public File read(String name) {
 		
 		try {
-			File file = new File(path + Main.slash() + name);
+			File file = new File(path + Main.slash() + cam.getName() + Main.slash() + name);
 			if (!file.exists()) return null;
 			return file;
 		} catch(Exception e) {
@@ -102,7 +113,7 @@ public class Path {
 	public List<File> files() { //Get files at path
 		
 		try {
-			File dir = new File(path);
+			File dir = new File(path + Main.slash() + cam.getName());
 			if (!dir.exists()) return new ArrayList<File>();
 			return Arrays.asList(dir.listFiles());
 		} catch(Exception e) {
@@ -115,7 +126,7 @@ public class Path {
 	public boolean delete(String name) { //Remove file at path
 		
 		try {
-			File file = new File(path + Main.slash() + name);
+			File file = new File(path + Main.slash() + cam.getName() + Main.slash() + name);
 			if (!file.exists()) return true;
 			return file.delete();
 		} catch(Exception e) {
