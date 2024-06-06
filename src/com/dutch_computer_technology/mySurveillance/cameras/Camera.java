@@ -32,7 +32,7 @@ public class Camera {
 	public Camera(MySurveillance ms, String name) {
 		
 		this.name = name;
-		Path path = new Relative(ms);
+		Path path = new Relative(ms, this);
 		path.setPath(Main.path(Main.defaultSaveLocation) + Main.slash() + name);
 		this.path = path;
 		this.reason = new MaxSize(ms, this);
@@ -41,12 +41,12 @@ public class Camera {
 	};
 	
 	private Path getDefaultPath(MySurveillance ms) {
-		Relative path = new Relative(ms);
+		Relative path = new Relative(ms, this);
 		path.setPath(Main.path(Main.defaultSaveLocation) + Main.slash() + name);
 		return path;
 	};
 	
-	private Path getPath(MySurveillance ms, JSONObject json) {
+	private Path getPath(MySurveillance ms, Camera cam, JSONObject json) {
 		
 		if (!json.contains("path")) return getDefaultPath(ms);
 		
@@ -63,7 +63,7 @@ public class Camera {
 			return getDefaultPath(ms);
 		};
 		
-		return ms.fileManager.createPath(type, path);
+		return ms.fileManager.createPath(type, cam, path);
 		
 	};
 	
@@ -126,7 +126,7 @@ public class Camera {
 		this.name = name;
 		
 		if (json.contains("cameraType")) this.cameraType = CameraType.valueOf(json.getString("cameraType"));
-		this.path = getPath(ms, json);
+		this.path = getPath(ms, this, json);
 		this.reason = getReason(ms, this, json);
 		this.stream = getStream(ms, this, json);
 		if (json.contains("online")) this.online = json.getBoolean("online");
