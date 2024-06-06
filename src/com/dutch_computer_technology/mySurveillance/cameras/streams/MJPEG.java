@@ -100,7 +100,7 @@ public class MJPEG extends Stream {
 		if (stream == null) return;
 		if (stream.length == 0) return;
 		
-		String name = getCam().getName() + Main.slash() +  (now.getYear() + "-" + sMon + "-" + sDay + " " + sHour + sMin) + ".mjpeg";
+		String name = (now.getYear() + "-" + sMon + "-" + sDay + " " + sHour + sMin) + ".mjpeg";
 		getMS().fileManager.addData(getCam(), name, stream);
 		
 	};
@@ -158,10 +158,10 @@ public class MJPEG extends Stream {
 				};
 				
 				byte[] s = new byte[0];
-				s = ByteManager.append(s, "GET " + streamAddress + " HTTP/1.1\n");
+				s = ByteManager.append(s, "GET " + streamAddress + " HTTP/1.1\r\n");
 				String base = new String(Base64.getEncoder().encode((username + ":" + password).getBytes()));
-				s = ByteManager.append(s, "Authorization: Basic " + base + "\n");
-				s = ByteManager.append(s, "\n\n");
+				s = ByteManager.append(s, "Authorization: Basic " + base + "\r\n");
+				s = ByteManager.append(s, "\r\n\r\n");
 				
 				socket.getOutputStream().write(s);
 				InputStream is = socket.getInputStream();
