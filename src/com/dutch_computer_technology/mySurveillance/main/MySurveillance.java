@@ -86,12 +86,14 @@ public class MySurveillance {
 	
 	public void save() {
 		
-		JSONArray screensJ = new JSONArray();
-		for (String screen : screens) {
-			screensJ.add(screen);
+		if (screens != null) {
+			JSONArray screensJ = new JSONArray();
+			for (String screen : screens) {
+				screensJ.add(screen);
+			};
+			config.put("screens", screensJ);
 		};
-		config.put("screens", screensJ);
-		config.put("language", lang.getLanguage().toString());
+		if (lang != null) config.put("language", lang.getLanguage().toString());
 		saveJSON("config.json", config);
 		
 	};

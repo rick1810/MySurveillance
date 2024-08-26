@@ -38,6 +38,7 @@ public class Lang {
 	};
 	
 	public Language getLanguage() {
+		if (language == null) return Main.defaultLanguage;
 		return language;
 	};
 	public void setLanguage(Language language) {
