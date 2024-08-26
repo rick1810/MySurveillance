@@ -1,7 +1,7 @@
 package com.dutch_computer_technology.mySurveillance.cameras.reasons;
 
 import com.dutch_computer_technology.mySurveillance.cameras.Camera;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 import com.dutch_computer_technology.mySurveillance.main.FileManager.ReasonType;
 

@@ -15,7 +15,8 @@ public class Lang {
 	
 	public enum Language {
 		en("English"),
-		nl("Nederlands");
+		nl("Nederlands"),
+		de("Deutsch");
 		public final String name;
 		private Language(String name) {
 			this.name = name;
@@ -33,10 +34,7 @@ public class Lang {
 				language = Language.valueOf(languageStr);
 			} catch(IllegalArgumentException ignore) {};
 		};
-		this.language = language;
-		load(Main.defaultLanguage);
-		if (Main.defaultLanguage.equals(language)) return;
-		load(language);
+		setLanguage(language);
 	};
 	
 	public Language getLanguage() {
@@ -44,6 +42,8 @@ public class Lang {
 	};
 	public void setLanguage(Language language) {
 		this.language = language;
+		load(Main.defaultLanguage);
+		if (Main.defaultLanguage.equals(language)) return;
 		load(language);
 	};
 	
@@ -72,8 +72,17 @@ public class Lang {
 			String[] strs = str.split("=");
 			if (strs.length < 2) continue;
 			String key = strs[0];
+			String valRaw = "";
+			for (int i = 1; i < strs.length; i++) valRaw += strs[i];
 			String val = "";
-			for (int i = 1; i < strs.length; i++) val += strs[i];
+			for (int i = 0; i < valRaw.length(); i++) {
+				String chr = "" + valRaw.charAt(i);
+				if (text.containsKey(chr)) {
+					val += text.get(chr);
+				} else {
+					val += chr;
+				};
+			};
 			text.put(key, val);
 		};
 		

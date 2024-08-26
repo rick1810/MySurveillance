@@ -12,7 +12,7 @@ import java.util.Date;
 import com.dutch_computer_technology.mySurveillance.Main;
 import com.dutch_computer_technology.mySurveillance.cameras.Camera;
 import com.dutch_computer_technology.mySurveillance.cameras.StreamManager.StreamType;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.ByteManager;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 
@@ -244,9 +244,9 @@ public class MJPEG extends Stream {
 					};
 					
 					if (xTime < time) {
-						data = ByteManager.delete(data, 0, sbIndex);
-						time = now;
-						continue;
+						socket.close();
+						if (getCam() != null) getCam().isRunning(false);
+						return;
 					};
 					
 					byte[] stream = ByteManager.between(data, eIndex+empty.length, sbIndex);

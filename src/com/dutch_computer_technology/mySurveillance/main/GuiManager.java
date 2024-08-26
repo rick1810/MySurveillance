@@ -56,7 +56,7 @@ public class GuiManager extends Thread {
 		this.ms = ms;
 		
 		frame = new JFrame();
-		frame.setTitle("MySurveillance");
+		frame.setTitle("MySurveillance (OpenSource)");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setResizable(false);
 		frame.setSize(420, 320);

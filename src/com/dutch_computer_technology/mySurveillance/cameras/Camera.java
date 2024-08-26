@@ -10,7 +10,7 @@ import com.dutch_computer_technology.mySurveillance.cameras.reasons.Reason;
 import com.dutch_computer_technology.mySurveillance.cameras.streams.Disabled;
 import com.dutch_computer_technology.mySurveillance.cameras.streams.Stream;
 import com.dutch_computer_technology.mySurveillance.exceptions.CameraParse;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.FileManager.PathType;
 import com.dutch_computer_technology.mySurveillance.main.FileManager.ReasonType;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;

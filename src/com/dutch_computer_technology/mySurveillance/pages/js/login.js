@@ -1,15 +1,40 @@
+var ready = true;
 window.addEventListener("load", function() {
 	let loginButton = document.getElementById("loginButton");
 	if (loginButton) {
 		loginButton.addEventListener("click", login);
 	};
+	let usernameInput = document.getElementById("usernameInput");
+	if (usernameInput) {
+		usernameInput.addEventListener("keydown", function(e) {
+			if (e.keyCode == 13 || e.keyCode == 40) {
+				let passwordInput = document.getElementById("passwordInput");
+				if (passwordInput) passwordInput.focus();
+			};
+		});
+	};
+	let passwordInput = document.getElementById("passwordInput");
+	if (passwordInput) {
+		passwordInput.addEventListener("keydown", function(e) {
+			if (e.keyCode == 38) {
+				let usernameInput = document.getElementById("usernameInput");
+				if (usernameInput) usernameInput.focus();
+			} else if (e.keyCode == 13) {
+				let loginButton = document.getElementById("loginButton");
+				if (loginButton) loginButton.click();
+			};
+		});
+	};
 });
 function login() {
+	
+	if (!ready) return;
+	ready = false;
+	
 	let usernameInput = document.getElementById("usernameInput");
 	if (!usernameInput) return;
 	let passwordInput = document.getElementById("passwordInput");
 	if (!passwordInput) return;
-	
 	let loginButton = document.getElementById("loginButton");
 	if (!loginButton) return;
 	
@@ -50,7 +75,17 @@ function login() {
 	let sendData = {"username": username, "password": password};
 	xhr.send(JSON.stringify(sendData));
 };
+function loginWait() {
+	
+	if (ready) return;
+	setTimeout(() => {
+		ready = true;
+	}, 5000); //5 Sec
+	
+};
 function inputError(elem, err, par) {
+	
+	loginWait();
 	
 	if (!elem) return;
 	if (!elem.hasAttribute("id")) return;

@@ -7,7 +7,7 @@ import com.dutch_computer_technology.mySurveillance.Main;
 import com.dutch_computer_technology.mySurveillance.cameras.streams.Disabled;
 import com.dutch_computer_technology.mySurveillance.cameras.streams.MJPEG;
 import com.dutch_computer_technology.mySurveillance.cameras.streams.Stream;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 
 public class StreamManager extends Thread {

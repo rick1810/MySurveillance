@@ -2,7 +2,7 @@ package com.dutch_computer_technology.mySurveillance.cameras.streams;
 
 import com.dutch_computer_technology.mySurveillance.cameras.Camera;
 import com.dutch_computer_technology.mySurveillance.cameras.StreamManager.StreamType;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 
 public class Disabled extends Stream {

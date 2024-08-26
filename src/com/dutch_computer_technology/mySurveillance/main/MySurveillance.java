@@ -17,8 +17,8 @@ import com.dutch_computer_technology.mySurveillance.accounts.Accounts;
 import com.dutch_computer_technology.mySurveillance.accounts.User;
 import com.dutch_computer_technology.mySurveillance.cameras.Cameras;
 import com.dutch_computer_technology.mySurveillance.cameras.StreamManager;
-import com.dutch_computer_technology.mySurveillance.json.JSONArray;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONArray;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.languages.Lang;
 import com.dutch_computer_technology.mySurveillance.website.Website;
 

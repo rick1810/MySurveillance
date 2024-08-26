@@ -13,7 +13,7 @@ import com.dutch_computer_technology.mySurveillance.website.data.Cookie;
 import com.dutch_computer_technology.mySurveillance.website.data.Cookies;
 import com.dutch_computer_technology.mySurveillance.website.data.Request;
 import com.dutch_computer_technology.mySurveillance.exceptions.AccountParse;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 
 public class Accounts {

@@ -3,8 +3,8 @@ package com.dutch_computer_technology.mySurveillance.pages;
 import com.dutch_computer_technology.mySurveillance.Main;
 import com.dutch_computer_technology.mySurveillance.Main.printType;
 import com.dutch_computer_technology.mySurveillance.accounts.User;
-import com.dutch_computer_technology.mySurveillance.exceptions.JSONParse;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
+import com.dutch_computer_technology.JSONManager.exception.JSONParseException;
 import com.dutch_computer_technology.mySurveillance.languages.Lang.Language;
 import com.dutch_computer_technology.mySurveillance.website.data.Page;
 import com.dutch_computer_technology.mySurveillance.website.data.Request;
@@ -191,7 +191,7 @@ public class Settings implements PageHandler {
 			
 			Main.print(this, printType.INFO, "Admin " + user.getUsername() + " on IP: " + request.ip() + ", used the following command: " + cmd);
 			
-		} catch (JSONParse e) {
+		} catch (JSONParseException e) {
 			Main.print(this, "Can't read data", e);
 			Page page = new Page();
 			page.setStatus(400);

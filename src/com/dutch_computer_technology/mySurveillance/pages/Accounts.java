@@ -4,8 +4,8 @@ import com.dutch_computer_technology.mySurveillance.Main;
 import com.dutch_computer_technology.mySurveillance.Main.printType;
 import com.dutch_computer_technology.mySurveillance.accounts.Token;
 import com.dutch_computer_technology.mySurveillance.accounts.User;
-import com.dutch_computer_technology.mySurveillance.exceptions.JSONParse;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
+import com.dutch_computer_technology.JSONManager.exception.JSONParseException;
 import com.dutch_computer_technology.mySurveillance.website.data.Page;
 import com.dutch_computer_technology.mySurveillance.website.data.Request;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
@@ -146,7 +146,7 @@ public class Accounts implements PageHandler {
 				
 			};
 			
-		} catch (JSONParse e) {
+		} catch (JSONParseException e) {
 			Main.print(this, "Can't read data", e);
 			Page page = new Page();
 			page.setStatus(400);

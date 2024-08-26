@@ -1,0 +1,76 @@
+ß=&#223;
+ä=&#228;
+ö=&#246;
+ü=&#252;
+
+header.home=Heim
+header.accounts=Konten
+header.cameras=Kameras
+header.settings=Institutionen
+header.logout=Ausloggen
+
+data.parse=Daten können nicht gelesen werden
+data.incomplete=Daten unvollständig
+credentials.incorrect=Falscher Benutzername / Passwort
+
+input.reset=Zurücksetzen
+input.remove=Entfernen
+input.save=Speichern
+input.close=Schließen
+
+login.text=Anmeldung sich bei MySurveillance
+login.username=Nutzername
+login.password=Passwort
+login.login=Anmeldung
+
+notFound.title=404 Not found
+notFound.title.text=404, Not found
+unauthorized.title=Unauthorized
+unauthorized.title.text=Unauthorized
+unauthorized.privileges=Admin privileges needed
+
+cameras.layout=Layout
+cameras.noCam=No Video
+cameras.nameUsed=Der Name wird vollständig verwendet
+cameras.camNotFound=Kamera nicht gefunden
+cameras.screenNotFound=Bildschirm nicht gefunden
+cameras.streamTypeNotFound=StreamType not found
+cameras.streamNotFound=Stream not found
+cameras.pathTypeNotFound=PathType not found
+cameras.pathNotFound=Path not found
+cameras.reasonTypeNotFound=ReasonType not found
+cameras.reasonNotFound=Reason not found
+
+cameras.settings.name=Name
+cameras.settings.status=Status
+cameras.settings.type=Typ
+cameras.settings.stream=Aufzeichnen methode
+cameras.settings.stream.disabled=Wird nicht streamen/aufnehmen.
+cameras.settings.stream.MJPEG.address=IP Adresse
+cameras.settings.stream.MJPEG.streamAddress=Zugriffsname
+cameras.settings.stream.MJPEG.username=Nutzername
+cameras.settings.stream.MJPEG.password=Passwort
+cameras.settings.stream.MJPEG.record=Aufnehmen
+cameras.settings.path=Pfad
+cameras.settings.path.absolute=Absolut
+cameras.settings.path.relative=Relativ
+cameras.settings.reason=Löschmethode
+cameras.settings.reason.maxSize=Max Größe
+cameras.settings.reason.disabled=Dateien werden nicht gelöscht
+
+accounts.nameUsed=Der Benutzername wird vollständig verwendet
+accounts.username=Nutzername
+accounts.password=Passwort
+accounts.isAdmin=isAdmin
+
+settings.langauge=Sprache
+settings.languageNotFound=Sprache nicht gefunden
+settings.colors=Färben
+settings.color.primary=Primärfarbe
+settings.color.secondary=Sekundäre Farbe
+settings.color.tertiary=Tertiärfarbe
+settings.color.input=Eingabe Farbe
+settings.color.inputBorder=Eingaberahmen Farbe
+settings.color.banner=Banner Farbe
+settings.colorNotFound=Farbe nicht gefunden
+settings.invalidHex=Ungültiges hex

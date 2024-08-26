@@ -2,7 +2,7 @@ package com.dutch_computer_technology.mySurveillance.cameras.paths;
 
 import com.dutch_computer_technology.mySurveillance.Main;
 import com.dutch_computer_technology.mySurveillance.cameras.Camera;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.FileManager.PathType;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 

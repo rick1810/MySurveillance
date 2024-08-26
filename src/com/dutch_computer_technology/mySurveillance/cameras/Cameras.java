@@ -6,7 +6,7 @@ import java.util.List;
 import com.dutch_computer_technology.mySurveillance.Main;
 import com.dutch_computer_technology.mySurveillance.Main.printType;
 import com.dutch_computer_technology.mySurveillance.exceptions.CameraParse;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 import com.dutch_computer_technology.mySurveillance.main.MySurveillance;
 
 public class Cameras {

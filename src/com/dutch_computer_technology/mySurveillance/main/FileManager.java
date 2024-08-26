@@ -11,7 +11,7 @@ import com.dutch_computer_technology.mySurveillance.cameras.paths.Relative;
 import com.dutch_computer_technology.mySurveillance.cameras.reasons.Disabled;
 import com.dutch_computer_technology.mySurveillance.cameras.reasons.MaxSize;
 import com.dutch_computer_technology.mySurveillance.cameras.reasons.Reason;
-import com.dutch_computer_technology.mySurveillance.json.JSONObject;
+import com.dutch_computer_technology.JSONManager.data.JSONObject;
 
 public class FileManager extends Thread {
 	
