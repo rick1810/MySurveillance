@@ -36,3 +36,7 @@ You can download any stable or newest version in [/releases](https://github.com/
 - `stop`: Saves config/accounts/cameras/files, toggles a boolean to stop all services. After 15 seconds, the program will force close itself in case any while loops are still active.
 - `gui`: Open a new Gui, and closes any old ones.
 - `radmin` : Resets/Create `Admin` account with default credentials `0000`
+
+## Dependencies
+
+- [JSONManager](https://github.com/rick1810/JSONManager) `1.0.7`
